@@ -44,7 +44,7 @@
         <%-- Node is a clickable page and contains children nodes --%>
         <c:when test="${child.page && child.parent}">
             <a href="${child.URI}"><span>${child.name}</span></a><!--
-            --><a href="${ajaxResourceUrl}" class="caret menuhandler close"><i>${resourceBundle.getString("label.children")}</i></a>
+            --><a href="#${ajaxResourceUrl}" class="caret menuhandler close"><i>${resourceBundle.getString("label.children")}</i></a>
         </c:when>
         <%-- Node is a clickable page but doesn't contain any children nodes --%>
         <c:when test="${child.page && !child.parent}">
@@ -52,7 +52,7 @@
         </c:when>
         <%-- Node is not a clickable page but contains children nodes, it's a "category" node --%>
         <c:when test="${!child.page && child.parent}">
-            <a href="${ajaxResourceUrl}" class="menuhandler close"><span>${child.name}</span><i class="caret">${resourceBundle.getString("label.children")}</i></a>
+            <a href="#${ajaxResourceUrl}" class="menuhandler close"><span>${child.name}</span><i class="caret">${resourceBundle.getString("label.children")}</i></a>
         </c:when>
         <%-- Do nothing with non-clickable "category" nodes without children nodes --%>
         <c:otherwise>
